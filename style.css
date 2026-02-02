@@ -1,0 +1,56 @@
+:root {
+    --bg: #0f0f0f;
+    --text: #f0f0f0;
+    --accent: #d4af37; /* Gold touch */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+body { background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+/* Navigation */
+nav {
+    display: flex; justify-content: space-between; padding: 2rem 5%;
+    position: fixed; width: 100%; top: 0; z-index: 100; mix-blend-mode: difference;
+}
+.logo { font-weight: 900; letter-spacing: -1px; font-size: 1.5rem; }
+.nav-links a {
+    color: var(--text); text-decoration: none; margin-left: 2rem;
+    font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;
+    opacity: 0.6; transition: 0.3s;
+}
+.nav-links a.active { opacity: 1; border-bottom: 1px solid var(--accent); }
+
+/* Layouts */
+.content-section { padding: 8rem 5% 4rem; min-height: 100vh; }
+.hidden { display: none; }
+
+/* Home Grid */
+.hero-text h1 { font-size: 8vw; line-height: 0.9; margin-bottom: 4rem; text-transform: uppercase; }
+.hero-text span { color: transparent; -webkit-text-stroke: 1px var(--text); }
+
+.image-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.grid-item { background: #222; overflow: hidden; height: 400px; }
+.grid-item img { width: 100%; height: 100%; object-fit: cover; transition: 1s; }
+.grid-item:hover img { transform: scale(1.1); }
+.tall { grid-row: span 2; height: 820px; }
+.wide { grid-column: span 2; }
+
+.grid-item img {
+    object-fit: cover;
+}
+
+.tall img {
+    object-position: 40% 100%;
+}
+
+/* Wishes Section */
+.wish-container { max-width: 800px; margin: 0 auto; }
+.wish-card {
+    border-bottom: 1px solid #333; padding: 3rem 0;
+    display: flex; align-items: flex-start;
+}
+.wish-card .number { font-size: 1rem; color: var(--accent); margin-right: 3rem; }
+.wish-card p { font-size: 2rem; line-height: 1.4; font-weight: 300; }
